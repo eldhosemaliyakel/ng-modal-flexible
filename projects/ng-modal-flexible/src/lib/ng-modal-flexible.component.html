@@ -1,0 +1,56 @@
+<div 
+    [ngClass]="[
+        'modal-flexible__parent', 
+        modalConfig.modalParentClass,
+        fadeOutAnimationClass, 
+        modalConfig.showAnimation ? 'modal-animate' : '' 
+    ]" 
+    *ngIf="modalConfig.isOpen">
+    <div 
+        class="modal-flexible__backdrop"
+        (click)="modalConfig.clickOutsideToClose ? closeModal() : null">
+    </div>
+    <div class="modal-flexible__body">
+        <div class="modal-flexible__header">
+            <h4 
+                [ngClass]="['modal-flexible-header__heading', modalConfig.headingTextClass]">
+                {{modalConfig.headingText}}
+            </h4>
+            <button 
+                [ngClass]="['modal-flexible-header__close-btn', modalConfig.closeBtnClass]"
+                (click)="closeModal()">
+                {{modalConfig.closeBtnContent}}
+            </button>
+        </div>
+        <div class="modal-flexible__content">
+            <p [ngClass]="['modal-flexible__content-p', modalConfig.contentTextClass]">
+                {{modalConfig.contentText}}
+            </p>
+        </div>
+        <div class="modal-flexible__footer">
+            <div class="modal-flexible__button-holder">
+                <button 
+                    [ngClass]="['modal-flexible__button', modalConfig.buttonOneClass]"
+                    type="button"
+                    *ngIf="modalConfig.buttonOneText"
+                    (click)="buttonOneClicked.emit()">
+                    {{modalConfig.buttonOneText}}
+                </button>
+                <button 
+                    [ngClass]="['modal-flexible__button', modalConfig.buttonTwoClass]"
+                    type="button"
+                    *ngIf="modalConfig.buttonTwoText"
+                    (click)="buttonTwoClicked.emit()">
+                    {{modalConfig.buttonTwoText}}
+                </button>
+                <button 
+                    [ngClass]="['modal-flexible__button', modalConfig.buttonThreeClass]"
+                    type="button"
+                    *ngIf="modalConfig.buttonThreeText"
+                    (click)="buttonThreeClicked.emit()">
+                    {{modalConfig.buttonThreeText}}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<h4>Test project for ng-modal-flexible</h4>
+<!-- <app-ng-modal-flexible
+  [modalConfig]="{
+    modalParentClass: 'test-class',
+    headingText: 'Welcome to ng-modal-flexible',
+    headingTextClass: '',
+    showCloseBtn: true,
+    closeBtnContent: 'X',
+    closeBtnClass: '',
+    contentText: 'This is the content for this awesome modal. Enjoy!!',
+    contentTextClass: '',
+    buttonOneText: 'Danger',
+    buttonOneClass: 'danger-btn',
+    buttonTwoText: 'Primary',
+    buttonTwoClass: 'primary-btn',
+    clickOutsideToClose: true,
+    escapeToClose: false,
+    showAnimation: true
+  }"
+  (modalClosed)="modalClosedEventTriggered()"
+  (buttonOneClicked)="buttonOneClickedTriggered()"
+  #modalOne>
+</app-ng-modal-flexible> -->
+
+<ng-modal-flexible
+  [modalConfig]="{
+    modalParentClass: 'test-class',
+    headingText: 'Welcome to ng-modal-flexible',
+    headingTextClass: '',
+    showCloseBtn: true,
+    closeBtnContent: 'X',
+    closeBtnClass: '',
+    contentText: 'This is the content for this awesome modal. Enjoy!!',
+    contentTextClass: '',
+    buttonOneText: 'Success',
+    buttonOneClass: 'success-btn',
+    buttonTwoText: 'Danger',
+    buttonTwoClass: 'danger-btn',
+    clickOutsideToClose: true,
+    escapeToClose: false,
+    showAnimation: true
+  }"
+  (modalClosed)="modalClosedEventTriggered()"
+  (buttonOneClicked)="buttonOneClickedTriggered()"
+  #modalOne>
+</ng-modal-flexible>
+
+<button (click)="modalOne.openModal()">Open Modal</button>
+<button (click)="modalOne.closeModal()">Close Modal</button>

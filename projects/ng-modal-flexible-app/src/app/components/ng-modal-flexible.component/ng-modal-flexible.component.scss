@@ -1,0 +1,131 @@
+.modal-flexible__parent.modal-animate {
+    
+    .modal-flexible__backdrop {
+        animation: modal-backdrop-fade-in 0.5s forwards;
+    }
+
+    .modal-flexible__body {
+        animation: modal-slide-in 0.5s forwards;
+    }   
+
+}
+
+.modal-flexible__parent.modal-animate.animate-out {
+
+    .modal-flexible__backdrop {
+        animation: modal-backdrop-fade-out 0.5s forwards;
+    }
+
+    .modal-flexible__body {
+        animation: modal-slide-out 0.5s forwards;
+    }
+
+}
+
+.modal-flexible__backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    /* filter: blur(8px); */
+    /* -webkit-filter: blur(8px) */;
+}
+
+.modal-flexible__body {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 6px;
+    width: 480px;
+    font-family: sans-serif;
+}
+
+.modal-flexible__header {
+    position: relative;
+}
+
+.modal-flexible-header__heading {
+    margin: 5px 25px;
+    text-align: center;
+}
+
+.modal-flexible-header__close-btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #007BFF;
+    padding: 4px 8px;
+    border-radius: 50%;
+    box-shadow: 0 0 6px #ccc;
+    cursor: pointer;
+}
+
+.modal-flexible__content {
+    padding: 25px;
+}
+
+.modal-flexible__content-p {
+    text-align: center;
+}
+
+.modal-flexible__button-holder {
+    text-align: center;
+}
+
+.modal-flexible__button {
+    margin: 10px;
+    border: none;
+    outline: none;
+    padding: 8px 20px;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 0 6px #ccc;
+}
+
+.modal-flexible__button.primary-btn {
+    background-color: #007BFF;
+}
+
+.modal-flexible__button.danger-btn {
+    background-color: #DC3545
+}
+
+.modal-flexible__button.success-btn {
+    background-color: #28A745
+}
+
+.modal-flexible__button.warning-btn {
+    background-color: #FFC107
+}
+
+@keyframes modal-slide-in {
+    from { top: -25% }
+    to { top: 25% }
+}
+
+@keyframes modal-slide-out {
+    from { top: 25% }
+    to { top: -25% }
+}
+
+@keyframes modal-backdrop-fade-in {
+    from { background-color: rgba(0, 0, 0, 0); }
+    to { background-color: rgba(0, 0, 0, 0.7); }
+}
+
+@keyframes modal-backdrop-fade-out {
+    from { background-color: rgba(0, 0, 0, 0.7); }
+    to { background-color: rgba(0, 0, 0, 0); }
+}
