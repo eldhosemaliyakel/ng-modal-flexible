@@ -1,20 +1,28 @@
 import { Component } from '@angular/core';
+import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `
+    <button (click)="modalOne.openModal()">Open Modal</button>
+    <ng-modal-flexible 
+      [modalConfig]="modalConfig"
+      (modalClosed)="modalClosed()"
+      (buttonOneClicked)="buttonOneClicked()"
+      #modalOne>
+    </ng-modal-flexible>
+  `
 })
 export class AppComponent {
 
-  title = 'ng-modal-flexible-app';
+  @ViewChild('modalOne', {static: false}) modalOne;
+  modalConfig = { buttonOneText: 'OK', escapeToClose: true }
 
-  modalClosedEventTriggered() {
-    console.log(`modalClosedEventTriggered !!`);
-  }
+  modalClosed() { console.log(`modalClosed !!`); }
 
-  buttonOneClickedTriggered() {
-    console.log(`buttonOneClickedTriggered !!`);
+  buttonOneClicked() {
+    /* Dro your logic here. console.log(`buttonOneClicked !!`); */
+    this.modalOne.closeModal();
   }
 
 }

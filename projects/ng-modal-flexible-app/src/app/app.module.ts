@@ -16,8 +16,8 @@ import { CommonModule } from '@angular/common';
   ],
   imports: [
     BrowserModule,
-    CommonModule,
     AppRoutingModule,
+    CommonModule,
     NgModalFlexibleModule
   ],
   providers: [],

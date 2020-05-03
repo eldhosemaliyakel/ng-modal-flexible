@@ -1,8 +1,28 @@
 {
   "name": "ng-modal-flexible",
-  "version": "0.0.1",
+  "author": "Eldhose Maliyakel",
+  "license": "ISC",
+  "version": "1.0.5",
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eldhosemaliyakel/ng-modal-flexible"
+  },
+  "keywords": [
+    "Angular", 
+    "Modal",
+    "Modals",
+    "Pop up",
+    "Pop-up", 
+    "Angular 2+", 
+    "Angular 2", 
+    "Angular 4", 
+    "Angular 5", 
+    "Angular 6", 
+    "Angular 7", 
+    "Angular 8"
+  ]
 }

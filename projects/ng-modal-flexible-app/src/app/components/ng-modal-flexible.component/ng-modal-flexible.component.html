@@ -1,8 +1,8 @@
 <div 
     [ngClass]="[
         'modal-flexible__parent', 
-        modalConfig.modalParentClass,
-        fadeOutAnimationClass, 
+        modalConfig.modalParentClass ? modalConfig.modalParentClass : '',
+        fadeOutAnimationClass ? fadeOutAnimationClass : '', 
         modalConfig.showAnimation ? 'modal-animate' : '' 
     ]" 
     *ngIf="modalConfig.isOpen">
@@ -13,38 +13,57 @@
     <div class="modal-flexible__body">
         <div class="modal-flexible__header">
             <h4 
-                [ngClass]="['modal-flexible-header__heading', modalConfig.headingTextClass]">
+                [ngClass]="[
+                    'modal-flexible-header__heading', 
+                    modalConfig.headingTextClass ? modalConfig.headingTextClass : ''
+                ]">
                 {{modalConfig.headingText}}
             </h4>
             <button 
-                [ngClass]="['modal-flexible-header__close-btn', modalConfig.closeBtnClass]"
-                (click)="closeModal()">
+                [ngClass]="[
+                    'modal-flexible-header__close-btn', 
+                    modalConfig.closeBtnClass ? modalConfig.closeBtnClass : ''
+                ]"
+                (click)="closeModal()"
+                *ngIf="modalConfig.showCloseBtn">
                 {{modalConfig.closeBtnContent}}
             </button>
         </div>
         <div class="modal-flexible__content">
-            <p [ngClass]="['modal-flexible__content-p', modalConfig.contentTextClass]">
+            <p [ngClass]="[
+                    'modal-flexible__content-p', 
+                    modalConfig.contentTextClass ? modalConfig.contentTextClass : ''
+                ]">
                 {{modalConfig.contentText}}
             </p>
         </div>
         <div class="modal-flexible__footer">
             <div class="modal-flexible__button-holder">
                 <button 
-                    [ngClass]="['modal-flexible__button', modalConfig.buttonOneClass]"
+                    [ngClass]="[
+                        'modal-flexible__button', 
+                        modalConfig.buttonOneClass ? modalConfig.buttonOneClass : ''
+                    ]"
                     type="button"
                     *ngIf="modalConfig.buttonOneText"
                     (click)="buttonOneClicked.emit()">
                     {{modalConfig.buttonOneText}}
                 </button>
                 <button 
-                    [ngClass]="['modal-flexible__button', modalConfig.buttonTwoClass]"
+                    [ngClass]="[
+                        'modal-flexible__button', 
+                        modalConfig.buttonTwoClass ? modalConfig.buttonTwoClass : 'primary-btn'
+                    ]"
                     type="button"
                     *ngIf="modalConfig.buttonTwoText"
                     (click)="buttonTwoClicked.emit()">
                     {{modalConfig.buttonTwoText}}
                 </button>
                 <button 
-                    [ngClass]="['modal-flexible__button', modalConfig.buttonThreeClass]"
+                    [ngClass]="[
+                        'modal-flexible__button', 
+                        modalConfig.buttonThreeClass ? modalConfig.buttonThreeClass : 'primary-btn'
+                    ]"
                     type="button"
                     *ngIf="modalConfig.buttonThreeText"
                     (click)="buttonThreeClicked.emit()">

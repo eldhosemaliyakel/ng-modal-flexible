@@ -1,20 +1,20 @@
 export class ModalConfig {
-    isOpen: boolean = false;
+    isOpen: boolean;
     modalParentClass: string;
     headingText: string;
     headingTextClass: string;
-    showCloseBtn: boolean = true;
-    closeBtnContent:any = 'X';
+    showCloseBtn: boolean;
+    closeBtnContent:any;
     closeBtnClass: string;
     contentText: string;
     contentTextClass: string;
     buttonOneText: string;
-    buttonOneClass: string = 'primary-btn';
+    buttonOneClass: string;
     buttonTwoText: string;
-    buttonTwoClass: string = 'danger-btn';
+    buttonTwoClass: string;
     buttonThreeText: string;
     buttonThreeClass: string;
-    clickOutsideToClose: boolean = true;
-    escapeToClose: boolean = false;
-    showAnimation: boolean = true;
+    clickOutsideToClose: boolean;
+    escapeToClose: boolean;
+    showAnimation: boolean;
 }
