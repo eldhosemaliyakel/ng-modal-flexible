@@ -2,7 +2,7 @@
   "name": "ng-modal-flexible",
   "author": "Eldhose Maliyakel",
   "license": "ISC",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14"

@@ -26,7 +26,7 @@ export class NgModalFlexibleComponent implements OnInit {
 
   openModal() { 
     if(!this.modalConfig.headingText) this.modalConfig.headingText = 'Welcome to ng-modal-flexible';
-    if(!this.modalConfig.contentText) this.modalConfig.contentText = 'Please assign you contents to \'contentText\'property of modalConfig and you are good to go!';
+    if(!this.modalConfig.contentText) this.modalConfig.contentText = 'Please assign your contents to \'contentText\' property of modalConfig and you are good to go!';
     if(!this.modalConfig.closeBtnContent) this.modalConfig.closeBtnContent = 'X';
     if(typeof(this.modalConfig.showCloseBtn) === 'undefined') this.modalConfig.showCloseBtn = true;  
     if(typeof(this.modalConfig.showAnimation) === 'undefined') this.modalConfig.showAnimation = true;  
